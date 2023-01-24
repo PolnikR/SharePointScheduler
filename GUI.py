@@ -66,7 +66,18 @@ class ScheduleWindow:
         # TO DO ROMAN : Pridaj checkbox na automatické spustenie EXE suboru
         # TO DO SIMON : Pridaj funkciu tlačidlam a checkboxu
 
-    # TO DO ROMAN : Zobraz historiu spustenia EXE suborov v okne
+    # TO DO SIMON : Vymaž EXE subor zo zoznamu
+    def vymazSubor(self):
+        pass
+
+    # TO DO SIMON : Spusti EXE subor
+    def spustiRucne(self):
+        pass
+
+    # TO DO SIMON : Spusti EXE subor automaticky
+    def spustiAutomaticky(self):
+        pass
+
     def zobraz_Historiu(self,zoznaHistoria):
         pass
         # TO DO ROMAN : Pridaj nazov EXE suboru
