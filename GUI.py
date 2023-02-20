@@ -2,13 +2,10 @@
 # Na GUI použijem knižnicu Tkinter
 #
 import tkinter
-import tkinter as tk
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
-import plotly.express as px
-import pandas as pd
+
 
 
 
@@ -21,6 +18,11 @@ class LoginWindow:
         self.root.resizable(False, False)
         self.canvas = Canvas(self.root, width=600, height=400, bg="white")
         self.canvas.pack()
+
+        self.list = [{'Subor': 'test.exe', 'Firma': 'AUTOCONT', 'Den': 'Pondelok', 'Cas': '10:00', 'Automaticky': 'True'},
+                {'Subor': 'test2.exe', 'Firma': 'Doprastaav', 'Den': 'Utorok', 'Cas': '10:00', 'Automaticky': 'True'},
+                {'Subor': 'test3.exe', 'Firma': 'TEHO', 'Den': 'Streda', 'Cas': '10:00', 'Automaticky': 'True'},
+                {'Subor': 'test4.exe', 'Firma': 'KIA', 'Den': 'Štvrtok', 'Cas': '10:00', 'Automaticky': 'True'}, ]
 
 
     # TO DO ROMAN : Pridaj v ľavo logo
@@ -70,16 +72,12 @@ class LoginWindow:
     # TO DO ROMAN : Hlavne okno sa vytvori cez triedy ScheduleWindow
     def zobraz_HlavneOkno(self):
 
-        list = [{'Subor': 'test.exe', 'Firma': 'AUTOCONT', 'Den': 'Pondelok', 'Cas': '10:00', 'Automaticky': 'True'},
-                {'Subor': 'test2.exe', 'Firma': 'Doprastaav', 'Den': 'Utorok', 'Cas': '10:00', 'Automaticky': 'True'},
-                {'Subor': 'test3.exe', 'Firma': 'TEHO', 'Den': 'Streda', 'Cas': '10:00', 'Automaticky': 'True'},
-                {'Subor': 'test4.exe', 'Firma': 'KIA', 'Den': 'Štvrtok', 'Cas': '10:00', 'Automaticky': 'True'}, ]
         schedule_window = ScheduleWindow(self.getWindows())
         schedule_window.nacitaj()
         schedule_window.pridaj()
-        schedule_window.zobraz(list)
-        schedule_window.zobraz_Historiu(list)
-        schedule_window.zobraz_Graf(list)
+        schedule_window.zobraz(self.list)
+        schedule_window.zobraz_Historiu(self.list)
+        schedule_window.zobraz_Graf(self.list)
 
 
 
@@ -295,6 +293,7 @@ class AddWindow:
         schedule_window.nacitaj()
         schedule_window.pridaj()
         schedule_window.zobraz(self.list)
+        schedule_window.zobraz_Historiu(self.list)
 
     def getWindow(self):
         return self.add_window
